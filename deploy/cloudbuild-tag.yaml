@@ -1,0 +1,13 @@
+steps:
+  - name: "gcr.io/cloud-builders/gsutil"
+    args: ["cp", "gs://${PROJECT_ID}_secrets_devops/github-integration/*", "."]
+
+  - name: "asia.gcr.io/$PROJECT_ID/bob:stable"
+    args: ["bash", "deploy/cloudbuild.sh"]
+
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "asia.gcr.io/$PROJECT_ID/logs:$TAG_NAME", "."]
+
+logsBucket: "verloop-dev_cloudbuild_logs"
+images:
+  - "asia.gcr.io/$PROJECT_ID/logs:$TAG_NAME"
