@@ -14,6 +14,8 @@ class Query(APIView):
     '''Query elasticsearch service, save query-response and return response'''
     '''{   
         "client_id":"atomberg",
+        "message_id":"rfqrfw4f24134134",
+        "room_id":"kjvkj3v4j2k34v",
         "question":"What are store timings?",
         "category":"general_queries"
     }'''
@@ -43,6 +45,8 @@ class Query(APIView):
 
         db_data = {
             "client_id":data["client_id"],
+            "room_id":data["room_id"],
+            "message_id":data["message_id"],
             "query_id":response_data["_id"],
             "question":data["question"],
             "question_matched":response_data["_source"]["Question"],

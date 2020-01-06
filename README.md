@@ -12,11 +12,10 @@
 
 - {  
   "client_id":"atomberg",
-  "index":"atomberg",
-  "type":"details"
+  "message_id":"rfqrfw4f24134134",
+  "room_id":"kjvkj3v4j2k34v",
   "question":"What are store timings?",
-  "category":"general_queries",
-  "return_fields": ["answers", "pname", "questiontop"]
+  "category":"general_queries"
   }
 
 ## /api/logs GET
